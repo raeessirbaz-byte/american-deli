@@ -5,24 +5,27 @@
 
 :root {
   /* American Deli exact brand colors from logo */
-  --red:        #E31837;   /* AD vivid brand red */
-  --red-dark:   #B5101F;   /* hover / pressed state */
-  --navy:       #002868;   /* AD patriotic navy (flag icon) */
-  --gold:       #FFB81C;   /* warm gold accent */
-  --dark:       #0D0D0D;
-  --dark2:      #141414;
-  --dark3:      #1C1C1C;
-  --dark4:      #272727;
-  --border:     rgba(255,255,255,0.08);
-  --muted:      #888;
+  --red:        #E31837;
+  --red-dark:   #B5101F;
+  --navy:       #002868;
+  --gold:       #FFB81C;
+
+  /* Light theme — black → white, white text → #14274D */
+  --dark:       #FFFFFF;
+  --dark2:      #F4F6FA;
+  --dark3:      #E8EDF5;
+  --dark4:      #D8E0EE;
+  --border:     rgba(20,39,77,0.1);
+  --muted:      #6B7A99;
+  --text:       #14274D;
   --white:      #FFFFFF;
   --radius:     10px;
   --t:          0.28s ease;
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Open Sans', sans-serif; background: var(--dark); color: var(--white); overflow-x: hidden; }
-h1,h2,h3,h4,h5 { font-family: 'Montserrat', sans-serif; font-weight: 800; line-height: 1.1; }
+body { font-family: 'Open Sans', sans-serif; background: var(--dark); color: var(--text); overflow-x: hidden; }
+h1,h2,h3,h4,h5 { font-family: 'Montserrat', sans-serif; font-weight: 800; line-height: 1.1; color: var(--text); }
 a { text-decoration: none; color: inherit; }
 img { display: block; max-width: 100%; }
 ul { list-style: none; }
@@ -40,8 +43,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .btn-red   { background: var(--red); color: #fff; }
 .btn-red:hover { background: #B5101F; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(227,24,55,.45); }
-.btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.35); }
-.btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+.btn-ghost { background: transparent; color: var(--text); border: 2px solid rgba(20,39,77,.35); }
+.btn-ghost:hover { border-color: var(--text); background: rgba(20,39,77,.06); }
 .btn-gold  { background: var(--gold); color: #000; }
 .btn-gold:hover { background: #e6a500; transform: translateY(-1px); }
 .btn-navy  { background: var(--navy); color: #fff; }
@@ -78,7 +81,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--muted); transition: var(--t);
 }
 .order-toggle button.active { background: var(--red); color: #fff; }
-.order-toggle button:not(.active):hover { color: #fff; }
+.order-toggle button:not(.active):hover { color: var(--text); }
 
 .nav-links {
   display: flex; align-items: center; gap: 32px;
@@ -88,7 +91,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--muted); transition: color var(--t);
 }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
 
 .nav-right { display: flex; align-items: center; gap: 14px; }
 .nav-right .btn { padding: 10px 22px; font-size: 0.75rem; }
@@ -115,7 +118,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .hamburger span {
   display: block; width: 100%; height: 2px;
-  background: #fff; border-radius: 2px; transition: var(--t);
+  background: var(--text); border-radius: 2px; transition: var(--t);
 }
 .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
@@ -133,7 +136,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--muted); padding: 13px 0;
   border-bottom: 1px solid var(--border); transition: color var(--t);
 }
-.mobile-nav a:hover { color: #fff; }
+.mobile-nav a:hover { color: var(--text); }
 .mobile-nav .order-toggle { margin-top: 20px; width: 100%; }
 .mobile-nav .order-toggle button { flex: 1; justify-content: center; padding: 12px; }
 .mobile-nav .btn { margin-top: 16px; justify-content: center; }
@@ -267,7 +270,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .order-card-icon { font-size: 1.8rem; }
 .order-card-text .label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-.order-card-text .name { font-size: 1rem; font-weight: 800; color: #fff; }
+.order-card-text .name { font-size: 1rem; font-weight: 800; color: var(--text); }
 
 /* ─────────────────────────────────────────
    SECTION HEADER (shared)
@@ -283,9 +286,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .sec-head-left h2 {
   font-size: clamp(1.5rem, 3vw, 2.1rem);
-  text-transform: uppercase; color: #fff;
+  text-transform: uppercase; color: var(--text);
 }
-.sec-head-left h2 span { color: var(--gold); }
+.sec-head-left h2 span { color: var(--red); }
 .see-all {
   font-family: 'Montserrat', sans-serif; font-weight: 700;
   font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
@@ -341,7 +344,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .deal-card-body { padding: 18px 18px 20px; }
 .deal-card-body h3 {
   font-size: 1rem; font-weight: 800; text-transform: uppercase;
-  color: #fff; margin-bottom: 6px; line-height: 1.3;
+  color: var(--text); margin-bottom: 6px; line-height: 1.3;
 }
 .deal-card-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-bottom: 16px; }
 .deal-card-body .btn { width: 100%; justify-content: center; padding: 11px; font-size: 0.75rem; }
@@ -352,9 +355,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   z-index: 5; width: 40px; height: 40px;
   background: var(--dark3); border: 1px solid var(--border);
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-size: 0.85rem; color: #fff; cursor: pointer; transition: var(--t);
+  font-size: 0.85rem; color: var(--text); cursor: pointer; transition: var(--t);
 }
-.scroll-arrow:hover { background: var(--red); border-color: var(--red); }
+.scroll-arrow:hover { background: var(--red); border-color: var(--red); color: #fff; }
 .scroll-arrow.left { left: -20px; }
 .scroll-arrow.right { right: -20px; }
 
@@ -377,8 +380,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--muted); border-bottom: 3px solid transparent;
   margin-bottom: -1px; transition: var(--t); cursor: pointer;
 }
-.cat-tab:hover { color: #fff; }
-.cat-tab.active { color: #fff; border-bottom-color: var(--red); }
+.cat-tab:hover { color: var(--text); }
+.cat-tab.active { color: var(--text); border-bottom-color: var(--red); }
 
 .menu-grid {
   display: grid;
@@ -404,7 +407,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .menu-card-body { padding: 14px 16px 18px; }
 .menu-card-body h4 {
   font-size: 0.88rem; font-weight: 800; text-transform: uppercase;
-  color: #fff; margin-bottom: 4px; line-height: 1.3;
+  color: var(--text); margin-bottom: 4px; line-height: 1.3;
 }
 .menu-card-body p { font-size: 0.76rem; color: var(--muted); line-height: 1.45; margin-bottom: 14px; }
 .menu-card-body .add-btn {
@@ -482,9 +485,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .sauce-strip-text h2 {
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  text-transform: uppercase; color: #fff; margin-bottom: 16px; line-height: 1.1;
+  text-transform: uppercase; color: var(--text); margin-bottom: 16px; line-height: 1.1;
 }
-.sauce-strip-text h2 span { color: var(--gold); }
+.sauce-strip-text h2 span { color: var(--red); }
 .sauce-strip-text p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; margin-bottom: 28px; }
 .sauce-strip-img { position: relative; }
 .sauce-strip-img img {
@@ -517,10 +520,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .app-text h2 {
   font-size: clamp(2rem, 4vw, 3rem);
-  text-transform: uppercase; font-weight: 900; color: #fff;
+  text-transform: uppercase; font-weight: 900; color: var(--text);
   margin-bottom: 16px;
 }
-.app-text h2 span { color: var(--gold); }
+.app-text h2 span { color: var(--red); }
 .app-text p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; margin-bottom: 32px; max-width: 440px; }
 
 .app-badges { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -533,7 +536,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .app-badge:hover { border-color: var(--red); background: rgba(227,24,55,.07); transform: translateY(-2px); }
 .app-badge-icon { font-size: 1.6rem; }
 .app-badge-text .label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
-.app-badge-text .store { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.95rem; color: #fff; }
+.app-badge-text .store { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--text); }
 
 .app-phones { display: flex; align-items: flex-end; gap: -20px; }
 .app-phones img {
@@ -601,11 +604,11 @@ footer { background: #090909; border-top: 1px solid var(--border); }
 .footer-col h5 {
   font-family: 'Montserrat', sans-serif; font-size: 0.72rem;
   font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
-  color: #fff; margin-bottom: 18px;
+  color: var(--text); margin-bottom: 18px;
 }
 .footer-col li { margin-bottom: 11px; }
 .footer-col a { font-size: 0.84rem; color: var(--muted); transition: color var(--t); }
-.footer-col a:hover { color: #fff; }
+.footer-col a:hover { color: var(--text); }
 
 .footer-bottom {
   border-top: 1px solid var(--border); padding: 20px 0;
@@ -614,7 +617,7 @@ footer { background: #090909; border-top: 1px solid var(--border); }
 .footer-bottom p { font-size: 0.8rem; color: var(--muted); }
 .footer-legal { display: flex; gap: 20px; }
 .footer-legal a { font-size: 0.8rem; color: var(--muted); transition: color var(--t); }
-.footer-legal a:hover { color: #fff; }
+.footer-legal a:hover { color: var(--text); }
 
 /* ─────────────────────────────────────────
    MENU PAGE
@@ -624,7 +627,7 @@ footer { background: #090909; border-top: 1px solid var(--border); }
   padding: 56px 0 48px; border-bottom: 1px solid var(--border);
 }
 .menu-page-hero h1 {
-  font-size: clamp(2rem, 4vw, 3.2rem); text-transform: uppercase; color: #fff; margin-bottom: 10px;
+  font-size: clamp(2rem, 4vw, 3.2rem); text-transform: uppercase; color: var(--text); margin-bottom: 10px;
 }
 .menu-page-hero h1 span { color: var(--red); }
 .menu-page-hero p { font-size: 0.92rem; color: var(--muted); max-width: 460px; line-height: 1.7; }
