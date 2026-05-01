@@ -172,7 +172,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .slide:nth-child(even) .slide-content { justify-content: flex-end; }
 
 .slide-text {
-  max-width: 540px; padding: 0 48px;
+  max-width: 540px; padding: 36px 48px 40px;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.6);
 }
 .slide:nth-child(even) .slide-text { text-align: right; }
 
@@ -180,18 +185,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: inline-block;
   font-family: 'Montserrat', sans-serif; font-weight: 700;
   font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 14px;
+  color: var(--red); margin-bottom: 14px;
 }
 
 .slide-text h1 {
   font-size: clamp(2.4rem, 5.5vw, 4.8rem);
   font-weight: 900; text-transform: uppercase; line-height: 1.0;
-  color: #fff; margin-bottom: 16px;
+  color: var(--text); margin-bottom: 16px;
 }
-.slide-text h1 em { font-style: italic; color: var(--gold); }
+.slide-text h1 em { font-style: italic; color: var(--red); }
 
 .slide-desc {
-  font-size: 1rem; color: rgba(255,255,255,.7);
+  font-size: 1rem; color: var(--muted);
   line-height: 1.65; margin-bottom: 32px; max-width: 400px;
 }
 
@@ -202,13 +207,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .slider-arrow {
   position: absolute; top: 50%; transform: translateY(-50%);
   z-index: 10; width: 48px; height: 48px;
-  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.75); border: 1px solid rgba(20,39,77,.15);
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-size: 1rem; color: #fff;
+  font-size: 1rem; color: var(--text);
   transition: background var(--t), border-color var(--t);
   cursor: pointer;
 }
-.slider-arrow:hover { background: var(--red); border-color: var(--red); }
+.slider-arrow:hover { background: var(--red); border-color: var(--red); color: #fff; }
 .slider-arrow.prev { left: 24px; }
 .slider-arrow.next { right: 24px; }
 
@@ -218,7 +223,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .slider-dot {
   width: 8px; height: 8px; border-radius: 50%;
-  background: rgba(255,255,255,.35); cursor: pointer;
+  background: rgba(20,39,77,.3); cursor: pointer;
   transition: var(--t);
 }
 .slider-dot.active { background: var(--red); width: 28px; border-radius: 4px; }
