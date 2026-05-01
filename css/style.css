@@ -4,19 +4,20 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  /* American Deli brand colors — from their logo & site */
-  --red:      #C8102E;   /* AD primary red */
-  --orange:   #E8440A;   /* warm accent */
-  --gold:     #F5A623;   /* AD gold/amber accent */
-  --dark:     #0D0D0D;
-  --dark2:    #141414;
-  --dark3:    #1C1C1C;
-  --dark4:    #272727;
-  --border:   rgba(255,255,255,0.08);
-  --muted:    #888;
-  --white:    #FFFFFF;
-  --radius:   10px;
-  --t:        0.28s ease;
+  /* American Deli exact brand colors from logo */
+  --red:        #E31837;   /* AD vivid brand red */
+  --red-dark:   #B5101F;   /* hover / pressed state */
+  --navy:       #002868;   /* AD patriotic navy (flag icon) */
+  --gold:       #FFB81C;   /* warm gold accent */
+  --dark:       #0D0D0D;
+  --dark2:      #141414;
+  --dark3:      #1C1C1C;
+  --dark4:      #272727;
+  --border:     rgba(255,255,255,0.08);
+  --muted:      #888;
+  --white:      #FFFFFF;
+  --radius:     10px;
+  --t:          0.28s ease;
 }
 
 html { scroll-behavior: smooth; }
@@ -38,11 +39,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: var(--t); cursor: pointer; border: none;
 }
 .btn-red   { background: var(--red); color: #fff; }
-.btn-red:hover { background: #bf1f00; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(214,35,0,.45); }
+.btn-red:hover { background: #B5101F; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(227,24,55,.45); }
 .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.35); }
 .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.08); }
 .btn-gold  { background: var(--gold); color: #000; }
 .btn-gold:hover { background: #e6a500; transform: translateY(-1px); }
+.btn-navy  { background: var(--navy); color: #fff; }
+.btn-navy:hover { background: #003580; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,40,104,.45); }
 
 /* ─────────────────────────────────────────
    NAVBAR
@@ -97,7 +100,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex; align-items: center; justify-content: center;
   font-size: 1.1rem; transition: var(--t);
 }
-.cart-btn:hover { border-color: var(--red); background: rgba(214,35,0,.12); }
+.cart-btn:hover { border-color: var(--red); background: rgba(227,24,55,.12); }
 .cart-count {
   position: absolute; top: -6px; right: -6px;
   width: 18px; height: 18px; border-radius: 50%;
@@ -259,8 +262,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: var(--t); min-width: 180px;
   font-family: 'Montserrat', sans-serif;
 }
-.order-card:hover { border-color: rgba(214,35,0,.5); background: rgba(214,35,0,.07); }
-.order-card.active { border-color: var(--red); background: rgba(214,35,0,.1); }
+.order-card:hover { border-color: rgba(227,24,55,.5); background: rgba(227,24,55,.07); }
+.order-card.active { border-color: var(--red); background: rgba(227,24,55,.1); }
 
 .order-card-icon { font-size: 1.8rem; }
 .order-card-text .label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
@@ -318,7 +321,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .deal-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 16px 40px rgba(0,0,0,.5);
-  border-color: rgba(214,35,0,.4);
+  border-color: rgba(227,24,55,.4);
 }
 
 .deal-card-img {
@@ -391,7 +394,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .menu-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0,0,0,.45);
-  border-color: rgba(214,35,0,.35);
+  border-color: rgba(227,24,55,.35);
 }
 
 .menu-card-img { height: 170px; overflow: hidden; background: var(--dark4); }
@@ -406,7 +409,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .menu-card-body p { font-size: 0.76rem; color: var(--muted); line-height: 1.45; margin-bottom: 14px; }
 .menu-card-body .add-btn {
   width: 100%; padding: 10px; border-radius: 6px;
-  background: rgba(214,35,0,.15); border: 1px solid rgba(214,35,0,.4);
+  background: rgba(227,24,55,.15); border: 1px solid rgba(227,24,55,.4);
   color: var(--red); font-family: 'Montserrat', sans-serif;
   font-weight: 700; font-size: 0.74rem; letter-spacing: 0.06em;
   text-transform: uppercase; transition: var(--t);
@@ -420,8 +423,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .feature-inner {
   border-radius: 16px; overflow: hidden;
-  background: linear-gradient(135deg, #1a0500 0%, #2d0a00 50%, #1a0500 100%);
-  border: 1px solid rgba(214,35,0,.25);
+  background: linear-gradient(135deg, #0a0010 0%, #1a001a 40%, #200010 100%);
+  border: 1px solid rgba(227,24,55,.25);
   display: grid; grid-template-columns: 1fr 1fr;
   min-height: 420px;
 }
@@ -501,7 +504,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   content: '';
   position: absolute; top: -80px; right: -80px;
   width: 400px; height: 400px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(214,35,0,.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(227,24,55,.18) 0%, transparent 70%);
 }
 
 .app-inner {
@@ -527,7 +530,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border: 1px solid var(--border); border-radius: 10px;
   cursor: pointer; transition: var(--t);
 }
-.app-badge:hover { border-color: var(--red); background: rgba(214,35,0,.07); transform: translateY(-2px); }
+.app-badge:hover { border-color: var(--red); background: rgba(227,24,55,.07); transform: translateY(-2px); }
 .app-badge-icon { font-size: 1.6rem; }
 .app-badge-text .label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
 .app-badge-text .store { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.95rem; color: #fff; }
@@ -545,7 +548,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    FIND A STORE BANNER
 ───────────────────────────────────────── */
 .store-banner {
-  background: var(--red); padding: 48px 0;
+  background: linear-gradient(100deg, var(--navy) 0%, #003580 100%);
+  padding: 48px 0;
+  border-top: 3px solid var(--red);
 }
 .store-banner-inner {
   display: flex; align-items: center;
@@ -751,7 +756,7 @@ footer { background: #090909; border-top: 1px solid var(--border); }
   border: none; cursor: pointer;
   transition: background 0.2s ease, transform 0.2s ease;
 }
-.travel-card-cta .order-btn:hover { background: #a30d24; transform: scale(1.04); }
+.travel-card-cta .order-btn:hover { background: #B5101F; transform: scale(1.04); }
 .travel-card-cta .order-btn .arrow { font-size: 1rem; }
 
 /* Wide card variant (takes 2 columns) */
