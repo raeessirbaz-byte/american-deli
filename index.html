@@ -3,63 +3,514 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>American Deli</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Georgia', serif; background: #1a1a1a; color: #f5f0e8; }
-    header {
-      background: #c8102e;
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #fff;
-    }
-    header p {
-      font-size: 1rem;
-      color: #ffd700;
-      margin-top: 0.5rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-    main {
-      max-width: 900px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-      text-align: center;
-    }
-    main h2 {
-      font-size: 2rem;
-      color: #ffd700;
-      margin-bottom: 1rem;
-    }
-    main p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #ccc;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #555;
-      font-size: 0.85rem;
-    }
-  </style>
+  <title>American Deli — Fresh To Order Every Order</title>
+  <meta name="description" content="Home of authentic Philly sandwiches, lemon pepper wings, fried rice, and handmade sauces. Order now for pickup or delivery.">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
 <body>
-  <header>
-    <h1>American Deli</h1>
-    <p>Fresh. Bold. Classic.</p>
+
+  <!-- ── HEADER ── -->
+  <header id="header">
+    <div class="container">
+      <nav class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/18fa8849-ae9c-47ea-8ec4-4a75ed2f31cf/american+deli+logo.png?format=300w"
+            alt="American Deli"
+          />
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#order">Order Now</a></li>
+          <li><a href="#sauces">Our Sauces</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="menu.html" class="btn btn-outline">View Menu</a>
+          <a href="#order" class="btn btn-primary">Order Now</a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="menu.html">Menu</a>
+      <a href="#locations">Locations</a>
+      <a href="#sauces">Our Sauces</a>
+      <a href="#order" class="btn btn-primary">Order Now</a>
+    </div>
   </header>
-  <main>
-    <h2>Welcome</h2>
-    <p>Home of authentic deli sandwiches, wings, and subs made fresh daily. Quality ingredients, bold flavors — the real American way.</p>
-  </main>
+
+  <!-- ── TICKER ── -->
+  <div class="ticker-bar" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack">
+      <span>Lemon Pepper Wings</span>
+      <span>Fresh To Order Every Order</span>
+      <span>Philly Sandwiches</span>
+      <span>Shrimp Fried Rice</span>
+      <span>Handmade Sauces</span>
+      <span>200+ Locations Nationwide</span>
+      <span>Since 1989</span>
+      <span>Lemon Pepper Wings</span>
+      <span>Fresh To Order Every Order</span>
+      <span>Philly Sandwiches</span>
+      <span>Shrimp Fried Rice</span>
+      <span>Handmade Sauces</span>
+      <span>200+ Locations Nationwide</span>
+      <span>Since 1989</span>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="section-label">Since 1989 · The Original</span>
+        <h1>Feeling<br /><span>Hungry?</span></h1>
+        <p class="hero-subtitle">
+          Satisfying your American Deli cravings has never been easier.
+          Order now for pickup or delivery through DoorDash, Uber Eats, or Grubhub.
+        </p>
+        <div class="hero-actions">
+          <a href="#order" class="btn btn-primary">Order Now</a>
+          <a href="menu.html" class="btn btn-outline">Explore Menu</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <span>★</span>
+      <span>Est. 1989</span>
+    </div>
+  </section>
+
+  <!-- ── FEATURED DEALS ── -->
+  <section class="deals-strip" id="deals">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <span class="section-label">Fan Favorites</span>
+          <h2>The <span>Good Stuff</span></h2>
+        </div>
+        <a href="menu.html" class="btn btn-outline">Full Menu</a>
+      </div>
+
+      <div class="deals-grid">
+        <div class="deal-card reveal reveal-delay-1">
+          <div class="deal-card-img">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/a49cc544-3d3d-433c-b4d1-956095a42058/lemon-pepper-wings.png"
+              alt="Lemon Pepper Wings"
+              loading="lazy"
+            />
+            <span class="deal-tag">Fan Favorite</span>
+          </div>
+          <div class="deal-card-body">
+            <h3>Lemon Pepper Wet</h3>
+            <p>The original straight from the source. Slow-tossed in our handmade lemon pepper sauce.</p>
+            <div class="deal-card-footer">
+              <a href="#order" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="deal-card reveal reveal-delay-2">
+          <div class="deal-card-img">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/e87beb6a-213b-49f1-b3ba-c234fb0a2076/Philly-and-Wings-and-Coke.png"
+              alt="Philly and Wings"
+              loading="lazy"
+            />
+            <span class="deal-tag">Classic Combo</span>
+          </div>
+          <div class="deal-card-body">
+            <h3>Philly? Wings? Yes! + Yes!</h3>
+            <p>Can't decide? Get both. Beef or chicken Philly paired with hot wings, the way it was meant to be.</p>
+            <div class="deal-card-footer">
+              <a href="#order" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="deal-card reveal reveal-delay-3">
+          <div class="deal-card-img">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/0630d732-566a-47ef-8cf5-cf9b227a0d39/Shrimp-Fried-Rice.png"
+              alt="Shrimp Fried Rice"
+              loading="lazy"
+            />
+            <span class="deal-tag">Fresh Daily</span>
+          </div>
+          <div class="deal-card-body">
+            <h3>Rice The Way You Like It</h3>
+            <p>Shrimp, chicken, beef, or veg — fried rice made fresh to order every single time.</p>
+            <div class="deal-card-footer">
+              <a href="#order" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SIGNATURE SPLIT: WINGS ── -->
+  <section class="signature-section">
+    <div class="container">
+      <div class="signature-grid reveal">
+        <div class="signature-text">
+          <span class="section-label">All The Good Stuff</span>
+          <h2>Hot Wings<br /><span>Done Right</span></h2>
+          <p>
+            Fresh to order, every order. We toss every wing in sauce we make ourselves —
+            slow-cooked in small batches so the flavor hits different every time.
+            11 flavors. Zero shortcuts.
+          </p>
+          <a href="menu.html" class="btn btn-primary">See All Wings</a>
+        </div>
+        <div class="signature-img">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/f2fa6245-3cce-4a18-8c0d-8527d0418a11/Wings-2.jpg"
+            alt="Hot Wings"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MENU PREVIEW ── -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <span class="section-label">Our Menu</span>
+          <h2>Hungry? <span>Combo It!</span></h2>
+        </div>
+      </div>
+
+      <div class="menu-tabs reveal">
+        <button class="menu-tab active" data-cat="combos">Combos</button>
+        <button class="menu-tab" data-cat="wings">Wings</button>
+        <button class="menu-tab" data-cat="phillys">Phillys</button>
+        <button class="menu-tab" data-cat="rice">Fried Rice</button>
+        <button class="menu-tab" data-cat="sides">Sides</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- Combos (default) -->
+        <div class="menu-card" data-cat="combos">
+          <div class="menu-card-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/b7a535b8-fca0-479a-8c33-6053318fe3f1/fries-combos.jpg" alt="Fries Combo" loading="lazy" />
+          </div>
+          <div class="menu-card-info">
+            <h4>Fries Combo</h4>
+            <p>Please any size crowd</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="combos">
+          <div class="menu-card-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/48c1e47f-1320-4643-a724-2d2362dc67d5/5-wings-fries-combos.jpg" alt="5 Wings + Fries" loading="lazy" />
+          </div>
+          <div class="menu-card-info">
+            <h4>5 Wings + Fries</h4>
+            <p>Crowd-pleaser combo</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="combos">
+          <div class="menu-card-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/74e04aea-4164-4b20-bcdd-bcbc38e466af/5-wings-combos.jpg" alt="5 Wings Combo" loading="lazy" />
+          </div>
+          <div class="menu-card-info">
+            <h4>5 Wings Combo</h4>
+            <p>Wings + your choice of side</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="combos">
+          <div class="menu-card-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/e87beb6a-213b-49f1-b3ba-c234fb0a2076/Philly-and-Wings-and-Coke.png" alt="Philly and Wings" loading="lazy" />
+          </div>
+          <div class="menu-card-info">
+            <h4>Philly + Wings Combo</h4>
+            <p>The ultimate American Deli combo</p>
+          </div>
+        </div>
+
+        <!-- Wings -->
+        <div class="menu-card" data-cat="wings" style="display:none;">
+          <div class="menu-card-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/a49cc544-3d3d-433c-b4d1-956095a42058/lemon-pepper-wings.png" alt="Lemon Pepper Wings" loading="lazy" />
+          </div>
+          <div class="menu-card-info">
+            <h4>Lemon Pepper Wet</h4>
+            <p>The original. The classic.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="wings" style="display:none;">
+          <div class="menu-card-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/f2fa6245-3cce-4a18-8c0d-8527d0418a11/Wings-2.jpg" alt="Hot Wings" loading="lazy" />
+          </div>
+          <div class="menu-card-info">
+            <h4>Hot Wings</h4>
+            <p>Bold heat, handmade sauce</p>
+          </div>
+        </div>
+
+        <!-- Phillys -->
+        <div class="menu-card" data-cat="phillys" style="display:none;">
+          <div class="menu-card-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/3e56a94b-578b-4969-9dce-45c75ddf7415/burger-on-1-1.png" alt="Beef Philly" loading="lazy" />
+          </div>
+          <div class="menu-card-info">
+            <h4>Beef Philly</h4>
+            <p>Classic cheesesteak, American Deli style</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="phillys" style="display:none;">
+          <div class="menu-card-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/e87beb6a-213b-49f1-b3ba-c234fb0a2076/Philly-and-Wings-and-Coke.png" alt="Chicken Philly" loading="lazy" />
+          </div>
+          <div class="menu-card-info">
+            <h4>Chicken Philly</h4>
+            <p>Grilled chicken, melted cheese</p>
+          </div>
+        </div>
+
+        <!-- Fried Rice -->
+        <div class="menu-card" data-cat="rice" style="display:none;">
+          <div class="menu-card-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/0630d732-566a-47ef-8cf5-cf9b227a0d39/Shrimp-Fried-Rice.png" alt="Shrimp Fried Rice" loading="lazy" />
+          </div>
+          <div class="menu-card-info">
+            <h4>Shrimp Fried Rice</h4>
+            <p>Fresh made, loaded with shrimp</p>
+          </div>
+        </div>
+
+        <!-- Sides -->
+        <div class="menu-card" data-cat="sides" style="display:none;">
+          <div class="menu-card-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/fc56ddde-799d-47c7-a5ea-55ded0b504f5/Fries-AD+%281%29.png" alt="Fries" loading="lazy" />
+          </div>
+          <div class="menu-card-info">
+            <h4>Fries</h4>
+            <p>Golden, crispy, fresh-cut</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="sides" style="display:none;">
+          <div class="menu-card-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/7ac467cd-0e7a-4a11-a93e-928d1d2e0fc7/cokee.png" alt="Drinks" loading="lazy" />
+          </div>
+          <div class="menu-card-info">
+            <h4>Fresh Drinks</h4>
+            <p>Coke, Sprite, Fanta & more</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SIGNATURE SPLIT: PHILLY ── -->
+  <section class="signature-section">
+    <div class="container">
+      <div class="signature-grid reverse reveal">
+        <div class="signature-text">
+          <span class="section-label">Made Fresh Daily</span>
+          <h2>The Original<br /><span>Philly</span></h2>
+          <p>
+            Beef or chicken — hand-sliced and cooked fresh to order every time.
+            Stacked on a toasted hoagie roll with melted cheese and all the fixings.
+            This is what the deli is known for.
+          </p>
+          <a href="menu.html" class="btn btn-primary">Order a Philly</a>
+        </div>
+        <div class="signature-img">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/3e56a94b-578b-4969-9dce-45c75ddf7415/burger-on-1-1.png"
+            alt="Beef Philly Sandwich"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SAUCE BANNER ── -->
+  <section class="sauce-banner" id="sauces">
+    <div class="container">
+      <div class="sauce-inner reveal">
+        <div class="sauce-text">
+          <span class="section-label">Handmade In-House</span>
+          <h2>Taste The<br />Difference</h2>
+          <p>
+            We spice up every sauce we offer to bring you fresh, unforgettable flavors.
+            Slow-cooked in small batches — from Lemon Pepper Wet to BBQ to Garlic Parmesan.
+            No shortcuts. No bottled shortcuts. Just real sauce.
+          </p>
+          <a href="menu.html" class="btn btn-outline">Explore All Flavors</a>
+        </div>
+        <div class="sauce-img">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/44f82549-b49d-4cdc-a802-0ede244ffe4b/sausec+preview+.png"
+            alt="Handmade Sauces"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ORDER PLATFORMS ── -->
+  <section class="order-section" id="order">
+    <div class="container">
+      <span class="section-label reveal">Order Online</span>
+      <h2 class="reveal">Order Now.<br /><span>Pick Up Fast.</span></h2>
+      <p class="subtitle reveal">
+        Satisfying your American Deli cravings has never been easier.
+        Order for pickup or delivery through your favorite platform.
+      </p>
+
+      <div class="platforms-grid reveal">
+        <a href="#" class="platform-btn">
+          <div class="platform-icon" style="background:#FF3008;">🍕</div>
+          <div class="platform-info">
+            <div class="label">Order via</div>
+            <div class="name">DoorDash</div>
+          </div>
+        </a>
+        <a href="#" class="platform-btn">
+          <div class="platform-icon" style="background:#06C167;">🛵</div>
+          <div class="platform-info">
+            <div class="label">Order via</div>
+            <div class="name">Uber Eats</div>
+          </div>
+        </a>
+        <a href="#" class="platform-btn">
+          <div class="platform-icon" style="background:#FF2C55;">🥡</div>
+          <div class="platform-info">
+            <div class="label">Order via</div>
+            <div class="name">Grubhub</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LOCATIONS ── -->
+  <section class="locations-section" id="locations">
+    <div class="container">
+      <div class="locations-inner">
+        <div class="locations-text reveal">
+          <span class="section-label">Find Us</span>
+          <h2><span>200+</span> Locations<br />Nationwide</h2>
+
+          <div class="locations-stat">
+            <div class="stat-item">
+              <h3>200+</h3>
+              <p>Locations</p>
+            </div>
+            <div class="stat-item">
+              <h3>35+</h3>
+              <p>Years Strong</p>
+            </div>
+            <div class="stat-item">
+              <h3>1989</h3>
+              <p>Est.</p>
+            </div>
+          </div>
+
+          <p>
+            With over 200 locations across the country, there's always an American Deli nearby.
+            Find your closest location and get fresh-made food in minutes.
+          </p>
+          <a href="#" class="btn btn-primary">Find A Location</a>
+        </div>
+
+        <div class="locations-map reveal reveal-delay-2">
+          <div class="map-placeholder">
+            <div class="map-icon">📍</div>
+            <h4>Find Your Nearest Deli</h4>
+            <p>200+ locations across the USA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
   <footer>
-    &copy; 2026 American Deli. All rights reserved.
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/18fa8849-ae9c-47ea-8ec4-4a75ed2f31cf/american+deli+logo.png?format=300w"
+            alt="American Deli"
+          />
+          <p>
+            Fresh to order. Every order. Since 1989, American Deli has been serving
+            authentic Philly sandwiches, wings, fried rice, and handmade sauces
+            across 200+ locations nationwide.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="Instagram">ig</a>
+            <a href="#" class="social-link" aria-label="TikTok">tk</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Franchising</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>American Deli</h5>
+          <ul>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#">Nutrition Guide</a></li>
+            <li><a href="#">Our Story</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Order Now</h5>
+          <ul>
+            <li><a href="#">DoorDash</a></li>
+            <li><a href="#">Uber Eats</a></li>
+            <li><a href="#">Grubhub</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 American Deli International, Inc. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
