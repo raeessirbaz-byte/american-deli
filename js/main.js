@@ -1,131 +1,157 @@
-/* ============================================================
-   AMERICAN DELI — Main JS
-   ============================================================ */
-
 (function () {
   'use strict';
 
-  /* ── Sticky Header ── */
-  const header = document.getElementById('header');
-  if (header) {
+  /* ── Navbar scroll shadow ── */
+  const navbar = document.getElementById('navbar');
+  if (navbar) {
     window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 40);
+      navbar.classList.toggle('scrolled', window.scrollY > 30);
     }, { passive: true });
   }
 
-  /* ── Mobile Menu ── */
+  /* ── Hamburger / mobile nav ── */
   const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  if (hamburger && mobileMenu) {
+  const mobileNav = document.getElementById('mobileNav');
+  if (hamburger && mobileNav) {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
+      mobileNav.classList.toggle('open');
     });
-
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
         hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
+        mobileNav.classList.remove('open');
       });
     });
   }
 
-  /* ── Hero background zoom on load ── */
-  const heroBg = document.getElementById('heroBg');
-  if (heroBg) {
-    window.addEventListener('load', () => {
-      heroBg.classList.add('loaded');
+  /* ── Delivery / Pickup toggles (navbar + order-type section) ── */
+  document.querySelectorAll('.order-toggle').forEach(toggle => {
+    const btns = toggle.querySelectorAll('button');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
     });
+  });
+
+  const orderCards = document.querySelectorAll('.order-card');
+  orderCards.forEach(card => {
+    card.addEventListener('click', () => {
+      orderCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+    });
+  });
+
+  /* ── Hero Slider ── */
+  const track     = document.getElementById('slidesTrack');
+  const dots      = document.querySelectorAll('.slider-dot');
+  const prevBtn   = document.getElementById('slidePrev');
+  const nextBtn   = document.getElementById('slideNext');
+
+  if (track && dots.length) {
+    let current   = 0;
+    let autoTimer = null;
+    const total   = dots.length;
+
+    function goTo(idx) {
+      current = (idx + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    function startAuto() {
+      autoTimer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      startAuto();
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => { goTo(+dot.dataset.index); resetAuto(); });
+    });
+
+    /* Touch/swipe */
+    let touchX = 0;
+    track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = touchX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) { goTo(diff > 0 ? current + 1 : current - 1); resetAuto(); }
+    }, { passive: true });
+
+    startAuto();
   }
 
-  /* ── Scroll Reveal ── */
-  const revealEls = document.querySelectorAll('.reveal');
+  /* ── Deals horizontal scroll arrows ── */
+  const dealsScroll = document.getElementById('dealsScroll');
+  const dealsLeft   = document.getElementById('dealsLeft');
+  const dealsRight  = document.getElementById('dealsRight');
 
-  if (revealEls.length > 0) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -48px 0px' }
-    );
-
-    revealEls.forEach(el => observer.observe(el));
+  if (dealsScroll) {
+    const scrollAmt = 320;
+    if (dealsLeft)  dealsLeft.addEventListener('click',  () => dealsScroll.scrollBy({ left: -scrollAmt, behavior: 'smooth' }));
+    if (dealsRight) dealsRight.addEventListener('click', () => dealsScroll.scrollBy({ left:  scrollAmt, behavior: 'smooth' }));
   }
 
-  /* ── Menu Tabs (homepage) ── */
-  const tabs = document.querySelectorAll('.menu-tab');
+  /* ── Menu category tabs ── */
+  const catTabs  = document.querySelectorAll('.cat-tab');
   const menuCards = document.querySelectorAll('.menu-card');
 
-  if (tabs.length > 0) {
-    tabs.forEach(tab => {
+  if (catTabs.length) {
+    catTabs.forEach(tab => {
       tab.addEventListener('click', () => {
+        catTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
         const cat = tab.dataset.cat;
 
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
         menuCards.forEach(card => {
-          if (card.dataset.cat === cat) {
-            card.style.display = 'block';
-            card.style.animation = 'fadeInUp 0.4s ease forwards';
-          } else {
-            card.style.display = 'none';
+          const show = cat === 'all' || card.dataset.cat === cat;
+          card.style.display = show ? 'block' : 'none';
+          if (show) {
+            card.style.animation = 'none';
+            card.offsetHeight; // reflow
+            card.style.animation = 'fadeUp .4s ease forwards';
           }
         });
       });
     });
   }
 
-  /* ── Smooth scroll for anchor links ── */
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const target = document.querySelector(link.getAttribute('href'));
+  /* ── Scroll reveal ── */
+  const reveals = document.querySelectorAll('.reveal');
+  if (reveals.length) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => obs.observe(el));
+  }
+
+  /* ── Smooth scroll anchors ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        const offset = 80;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
+        window.scrollTo({ top: target.offsetTop - 72, behavior: 'smooth' });
       }
     });
   });
 
-  /* ── Active nav link on scroll ── */
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  if (sections.length > 0 && navLinks.length > 0) {
-    const onScroll = () => {
-      let current = '';
-      sections.forEach(section => {
-        if (window.scrollY >= section.offsetTop - 100) {
-          current = section.getAttribute('id');
-        }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
-    };
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-
-  /* ── Fade-in keyframe via JS (for tab switching) ── */
-  const styleSheet = document.createElement('style');
-  styleSheet.textContent = `
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
+  /* ── Inject keyframes ── */
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(16px); }
+      to   { opacity:1; transform:translateY(0); }
     }
   `;
-  document.head.appendChild(styleSheet);
+  document.head.appendChild(style);
 
 })();
