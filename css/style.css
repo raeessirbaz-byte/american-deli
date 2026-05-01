@@ -164,17 +164,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background-size: cover; background-position: center;
 }
 
-/* Each slide gets its own gradient direction */
-.slide:nth-child(odd) .slide-bg::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(13,13,13,.92) 0%, rgba(13,13,13,.65) 50%, rgba(13,13,13,.1) 100%);
-}
-.slide:nth-child(even) .slide-bg::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(270deg, rgba(13,13,13,.92) 0%, rgba(13,13,13,.65) 50%, rgba(13,13,13,.1) 100%);
-}
 
 .slide-content {
   position: relative; z-index: 2;
