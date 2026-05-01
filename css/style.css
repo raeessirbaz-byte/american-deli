@@ -4,13 +4,14 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --red:      #D62300;
-  --orange:   #E8440A;
-  --gold:     #FFB800;
+  /* American Deli brand colors — from their logo & site */
+  --red:      #C8102E;   /* AD primary red */
+  --orange:   #E8440A;   /* warm accent */
+  --gold:     #F5A623;   /* AD gold/amber accent */
   --dark:     #0D0D0D;
-  --dark2:    #161616;
-  --dark3:    #1F1F1F;
-  --dark4:    #2A2A2A;
+  --dark2:    #141414;
+  --dark3:    #1C1C1C;
+  --dark4:    #272727;
   --border:   rgba(255,255,255,0.08);
   --muted:    #888;
   --white:    #FFFFFF;
@@ -623,30 +624,149 @@ footer { background: #090909; border-top: 1px solid var(--border); }
 .menu-page-hero h1 span { color: var(--red); }
 .menu-page-hero p { font-size: 0.92rem; color: var(--muted); max-width: 460px; line-height: 1.7; }
 
-.full-menu-body { padding: 48px 0 80px; background: var(--dark); }
+.full-menu-body { padding: 48px 0 100px; background: var(--dark); }
 
-.full-cat-block { margin-bottom: 56px; }
+.full-cat-block { margin-bottom: 72px; }
 .full-cat-title {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--red);
-  margin-bottom: 20px; padding-bottom: 12px;
+  margin-bottom: 28px; padding-bottom: 14px;
   border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 12px;
+}
+.full-cat-title::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
 }
 
-.full-menu-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px;
+/* ── Travel-card grid ── */
+.travel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
-.full-item {
-  background: var(--dark2); border-radius: var(--radius);
-  border: 1px solid var(--border); padding: 18px;
-  display: flex; align-items: center; gap: 14px;
-  cursor: pointer; transition: var(--t);
+/* ── Travel Card (converted from React component) ── */
+.travel-card {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 32px rgba(0,0,0,.5);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-.full-item:hover { border-color: rgba(214,35,0,.4); background: rgba(214,35,0,.05); transform: translateX(3px); }
-.full-item-icon { font-size: 1.8rem; flex-shrink: 0; width: 44px; text-align: center; }
-.full-item-info h4 { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: #fff; margin-bottom: 3px; }
-.full-item-info p { font-size: 0.75rem; color: var(--muted); line-height: 1.4; }
+.travel-card:hover {
+  box-shadow: 0 24px 64px rgba(0,0,0,.7);
+  transform: translateY(-8px);
+}
+
+/* Full background image with zoom on hover */
+.travel-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.travel-card:hover .travel-card-bg { transform: scale(1.1); }
+
+/* Gradient overlay — black at bottom, transparent at top */
+.travel-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.4) 50%, transparent 100%);
+}
+
+/* Content sits on top of image */
+.travel-card-inner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  color: #fff;
+}
+
+/* Top: category badge */
+.travel-card-top { display: flex; justify-content: flex-start; align-items: flex-start; height: 48px; }
+.travel-card-badge {
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.3);
+  backdrop-filter: blur(6px);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: #fff;
+}
+
+/* Middle: title + overview — slides up on hover */
+.travel-card-mid {
+  display: flex; flex-direction: column; gap: 10px;
+  transition: transform 0.5s ease;
+}
+.travel-card:hover .travel-card-mid { transform: translateY(-80px); }
+
+.travel-card-mid h3 {
+  font-size: 1.6rem; font-weight: 900;
+  text-transform: uppercase; color: #fff; line-height: 1.1;
+}
+.travel-card-mid .card-sub {
+  font-size: 0.8rem; color: rgba(255,255,255,.7); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+.travel-card-mid .card-overview-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--gold); margin-top: 6px;
+}
+.travel-card-mid .card-overview-text {
+  font-size: 0.82rem; color: rgba(255,255,255,.72); line-height: 1.55;
+}
+
+/* Bottom: hidden by default, slides up on hover */
+.travel-card-bottom {
+  position: absolute;
+  bottom: -90px; left: 0; right: 0;
+  padding: 0 20px 22px;
+  opacity: 0;
+  transition: bottom 0.5s ease, opacity 0.5s ease;
+}
+.travel-card:hover .travel-card-bottom { bottom: 0; opacity: 1; }
+
+.travel-card-cta {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.travel-card-cta .order-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 26px; border-radius: 8px;
+  background: var(--red); color: #fff;
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase;
+  border: none; cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.travel-card-cta .order-btn:hover { background: #a30d24; transform: scale(1.04); }
+.travel-card-cta .order-btn .arrow { font-size: 1rem; }
+
+/* Wide card variant (takes 2 columns) */
+.travel-card.wide { grid-column: span 2; }
+
+@media (max-width: 1024px) {
+  .travel-grid { grid-template-columns: repeat(2, 1fr); }
+  .travel-card.wide { grid-column: span 1; }
+  .travel-card { height: 420px; }
+}
+@media (max-width: 600px) {
+  .travel-grid { grid-template-columns: 1fr; }
+  .travel-card { height: 380px; }
+  .travel-card-mid h3 { font-size: 1.3rem; }
+}
 
 /* ─────────────────────────────────────────
    SCROLL REVEAL

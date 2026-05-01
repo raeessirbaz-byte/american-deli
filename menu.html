@@ -4,167 +4,543 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Menu — American Deli</title>
-  <meta name="description" content="Full menu: wings in 11 flavors, Philly sandwiches, fried rice, subs, seafood, salads, sides and drinks. Fresh to order at American Deli.">
+  <meta name="description" content="Full menu: wings in 11 flavors, Philly sandwiches, fried rice, subs, seafood, salads and sides. Fresh to order at American Deli.">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
 <body>
 
-  <!-- ══════════════════════════════════════
-       NAVBAR
-  ══════════════════════════════════════ -->
+  <!-- ══ NAVBAR ══ -->
   <header id="navbar">
     <div class="container">
       <div class="nav-top">
-
         <a href="index.html" class="nav-logo">
           <img src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/18fa8849-ae9c-47ea-8ec4-4a75ed2f31cf/american+deli+logo.png?format=300w" alt="American Deli" />
         </a>
-
         <div class="order-toggle">
           <button class="active">Delivery</button>
           <button>Pickup</button>
         </div>
-
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html" class="active">Menu</a></li>
           <li><a href="index.html#deals">Deals</a></li>
           <li><a href="index.html#stores">Find a Store</a></li>
         </ul>
-
         <div class="nav-right">
           <a href="index.html" class="btn btn-ghost">Home</a>
           <a href="index.html#deals" class="btn btn-red">Order Now</a>
-          <button class="cart-btn" aria-label="Cart">
-            🛒
-            <span class="cart-count">0</span>
-          </button>
+          <button class="cart-btn" aria-label="Cart">🛒<span class="cart-count">0</span></button>
         </div>
-
         <button class="hamburger" id="hamburger" aria-label="Open menu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
-
     <div class="mobile-nav" id="mobileNav">
       <a href="index.html">Home</a>
       <a href="menu.html">Menu</a>
       <a href="index.html#deals">Deals</a>
       <a href="index.html#stores">Find a Store</a>
-      <div class="order-toggle">
-        <button class="active">Delivery</button>
-        <button>Pickup</button>
-      </div>
+      <div class="order-toggle"><button class="active">Delivery</button><button>Pickup</button></div>
       <a href="index.html#deals" class="btn btn-red">Order Now</a>
     </div>
   </header>
 
-  <!-- ══════════════════════════════════════
-       MENU PAGE HERO
-  ══════════════════════════════════════ -->
+  <!-- ══ MENU PAGE HERO ══ -->
   <section class="menu-page-hero">
     <div class="container">
-      <p class="eyebrow" style="font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:10px;">Fresh To Order</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:10px;">Fresh To Order · Since 1989</p>
       <h1>The Full <span>Menu</span></h1>
-      <p>Everything made fresh the moment you order. Wings in 11 flavors, Phillys, fried rice, subs, salads, seafood, and more since 1989.</p>
+      <p>Everything made fresh the moment you order. Wings in 11 flavors, Phillys, fried rice, subs, salads, seafood and more.</p>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       FULL MENU
-  ══════════════════════════════════════ -->
+  <!-- ══ FULL MENU ══ -->
   <div class="full-menu-body">
     <div class="container">
 
-      <!-- WINGS -->
+      <!-- ─── WINGS ─── -->
       <div class="full-cat-block reveal">
         <div class="full-cat-title">Wings</div>
-        <div class="full-menu-grid">
-          <div class="full-item"><span class="full-item-icon">🔥</span><div class="full-item-info"><h4>Lemon Pepper Wet</h4><p>Original handmade lemon pepper sauce</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🌶️</span><div class="full-item-info"><h4>Hot Wings</h4><p>Bold heat, classic deli style</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🍯</span><div class="full-item-info"><h4>BBQ Wings</h4><p>Sweet, smoky, rich</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🧄</span><div class="full-item-info"><h4>Garlic Parmesan</h4><p>Buttery garlic with shaved parm</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🍋</span><div class="full-item-info"><h4>Lemon Pepper Sprinkle</h4><p>Dry rub, crispy finish</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🌿</span><div class="full-item-info"><h4>Teriyaki</h4><p>Sweet glaze, Japanese-style</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🟡</span><div class="full-item-info"><h4>Family Gold</h4><p>House specialty sauce</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🌶️</span><div class="full-item-info"><h4>Medium</h4><p>Not too hot, not too mild</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🍬</span><div class="full-item-info"><h4>Sweet Chili</h4><p>Sweet heat, Asian-inspired</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🧂</span><div class="full-item-info"><h4>Seasoning Salt</h4><p>Classic dry seasoning</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🫙</span><div class="full-item-info"><h4>Mild</h4><p>Light heat, full flavor</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🍗</span><div class="full-item-info"><h4>Boneless Wings</h4><p>All the flavor, no bone</p></div></div>
+        <div class="travel-grid">
+
+          <!-- Card 1 — Lemon Pepper Wet (wide) -->
+          <div class="travel-card wide">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/a49cc544-3d3d-433c-b4d1-956095a42058/lemon-pepper-wings.png" alt="Lemon Pepper Wings" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top">
+                <span class="travel-card-badge">Fan Favorite</span>
+              </div>
+              <div class="travel-card-mid">
+                <div>
+                  <h3>Lemon Pepper Wet</h3>
+                  <p class="card-sub">Wings · Handmade Sauce</p>
+                </div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">The original straight from the source. Slow-tossed in our handmade lemon pepper sauce — the flavor that put American Deli on the map.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom">
+                <div class="travel-card-cta">
+                  <button class="order-btn">Order Now <span class="arrow">→</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 — Hot Wings -->
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/f2fa6245-3cce-4a18-8c0d-8527d0418a11/Wings-2.jpg" alt="Hot Wings" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top">
+                <span class="travel-card-badge">Bold Heat</span>
+              </div>
+              <div class="travel-card-mid">
+                <div>
+                  <h3>Hot Wings</h3>
+                  <p class="card-sub">Wings · Classic Style</p>
+                </div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Bold heat, handmade sauce, crispy every time. The classic American Deli hot wing — nothing extra, nothing missing.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom">
+                <div class="travel-card-cta">
+                  <button class="order-btn">Order Now <span class="arrow">→</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 — BBQ Wings -->
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/44f82549-b49d-4cdc-a802-0ede244ffe4b/sausec+preview+.png" alt="BBQ Wings" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top">
+                <span class="travel-card-badge">Smoky Sweet</span>
+              </div>
+              <div class="travel-card-mid">
+                <div>
+                  <h3>BBQ Wings</h3>
+                  <p class="card-sub">Wings · Slow-Cooked Sauce</p>
+                </div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Sweet, smoky, rich. Our BBQ sauce is slow-cooked in small batches — real flavor you can taste in every bite.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom">
+                <div class="travel-card-cta">
+                  <button class="order-btn">Order Now <span class="arrow">→</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 — Garlic Parmesan -->
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/2b365009-a22d-43c6-98b3-b5672a036441/paper.jpg" alt="Garlic Parmesan Wings" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top">
+                <span class="travel-card-badge">Rich &amp; Buttery</span>
+              </div>
+              <div class="travel-card-mid">
+                <div>
+                  <h3>Garlic Parmesan</h3>
+                  <p class="card-sub">Wings · Butter Sauce</p>
+                </div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Buttery garlic tossed with shaved parmesan. The wing for people who want rich and savory without the heat.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom">
+                <div class="travel-card-cta">
+                  <button class="order-btn">Order Now <span class="arrow">→</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 — Lemon Pepper Sprinkle -->
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/a49cc544-3d3d-433c-b4d1-956095a42058/lemon-pepper-wings.png" alt="Lemon Pepper Sprinkle" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top">
+                <span class="travel-card-badge">Dry Rub</span>
+              </div>
+              <div class="travel-card-mid">
+                <div>
+                  <h3>Lemon Pepper Sprinkle</h3>
+                  <p class="card-sub">Wings · Dry Seasoning</p>
+                </div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">All the lemon pepper flavor you love, in a crispy dry rub finish. No sauce, just perfectly seasoned wings.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom">
+                <div class="travel-card-cta">
+                  <button class="order-btn">Order Now <span class="arrow">→</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 — Boneless Wings (wide) -->
+          <div class="travel-card wide">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/f2fa6245-3cce-4a18-8c0d-8527d0418a11/Wings-2.jpg" alt="Boneless Wings" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top">
+                <span class="travel-card-badge">No Bone</span>
+              </div>
+              <div class="travel-card-mid">
+                <div>
+                  <h3>Boneless Wings</h3>
+                  <p class="card-sub">Wings · Any Sauce</p>
+                </div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">All the flavor, none of the bone. Choose any of our 11 handmade sauces — tossed fresh to order, every time.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom">
+                <div class="travel-card-cta">
+                  <button class="order-btn">Order Now <span class="arrow">→</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- PHILLYS & SUBS -->
+      <!-- ─── PHILLYS & SUBS ─── -->
       <div class="full-cat-block reveal">
         <div class="full-cat-title">Phillys &amp; Subs</div>
-        <div class="full-menu-grid">
-          <div class="full-item"><span class="full-item-icon">🥩</span><div class="full-item-info"><h4>Beef Philly</h4><p>Hand-sliced beef, melted cheese, toasted hoagie</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🍗</span><div class="full-item-info"><h4>Chicken Philly</h4><p>Grilled chicken, peppers, onions, cheese</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🥪</span><div class="full-item-info"><h4>Ham Sub</h4><p>Classic deli ham on fresh-baked roll</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🦃</span><div class="full-item-info"><h4>Turkey Sub</h4><p>Sliced turkey with all the toppings</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🥪</span><div class="full-item-info"><h4>Ham &amp; Turkey Sub</h4><p>Best of both worlds</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🌯</span><div class="full-item-info"><h4>Beef Gyro</h4><p>Slow-roasted beef, tzatziki, fresh veggies</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🌯</span><div class="full-item-info"><h4>Chicken Gyro</h4><p>Grilled chicken in warm pita</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🥪</span><div class="full-item-info"><h4>Reuben</h4><p>Corned beef, sauerkraut, Swiss, Thousand Island</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🍗</span><div class="full-item-info"><h4>Chicken Tender Sandwich</h4><p>Hand-battered tenders on a toasted bun</p></div></div>
+        <div class="travel-grid">
+
+          <div class="travel-card wide">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/3e56a94b-578b-4969-9dce-45c75ddf7415/burger-on-1-1.png" alt="Beef Philly" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">The Original</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Beef Philly</h3><p class="card-sub">Philly Sandwich</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Hand-sliced beef, melted cheese, grilled peppers and onions on a toasted hoagie roll. The sandwich American Deli built its name on.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Order Now <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/e87beb6a-213b-49f1-b3ba-c234fb0a2076/Philly-and-Wings-and-Coke.png" alt="Chicken Philly" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Grilled Fresh</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Chicken Philly</h3><p class="card-sub">Philly Sandwich</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Grilled chicken, melted cheese, peppers and onions — on a fresh toasted hoagie.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Order Now <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/3e56a94b-578b-4969-9dce-45c75ddf7415/burger-on-1-1.png" alt="Ham Sub" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Deli Classic</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Ham Sub</h3><p class="card-sub">Sub Sandwich</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Classic deli ham loaded on a fresh-baked roll with all the fixings.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Order Now <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/e87beb6a-213b-49f1-b3ba-c234fb0a2076/Philly-and-Wings-and-Coke.png" alt="Turkey Sub" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Fresh Sliced</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Turkey Sub</h3><p class="card-sub">Sub Sandwich</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Sliced turkey piled high with fresh toppings on a toasted roll.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Order Now <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/3e56a94b-578b-4969-9dce-45c75ddf7415/burger-on-1-1.png" alt="Reuben" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Stack Classic</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Reuben</h3><p class="card-sub">Deli Sandwich</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Corned beef, sauerkraut, Swiss cheese and Thousand Island on grilled rye.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Order Now <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- FRIED RICE -->
+      <!-- ─── FRIED RICE ─── -->
       <div class="full-cat-block reveal">
         <div class="full-cat-title">Fried Rice</div>
-        <div class="full-menu-grid">
-          <div class="full-item"><span class="full-item-icon">🍤</span><div class="full-item-info"><h4>Shrimp Fried Rice</h4><p>Fresh shrimp, house sauce, wok-tossed</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🍗</span><div class="full-item-info"><h4>Chicken Fried Rice</h4><p>Tender chicken, seasoned rice</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🥩</span><div class="full-item-info"><h4>Beef Fried Rice</h4><p>Seasoned beef, fresh vegetables</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🥗</span><div class="full-item-info"><h4>Vegetable Fried Rice</h4><p>Fresh veg, light and flavorful</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🍚</span><div class="full-item-info"><h4>House Fried Rice</h4><p>Chef's mix — everything in one bowl</p></div></div>
+        <div class="travel-grid">
+
+          <div class="travel-card wide">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/0630d732-566a-47ef-8cf5-cf9b227a0d39/Shrimp-Fried-Rice.png" alt="Shrimp Fried Rice" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Fresh Daily</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Shrimp Fried Rice</h3><p class="card-sub">Rice · Made To Order</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Wok-tossed shrimp fried rice made fresh to order every single time. House sauce, fresh shrimp, seasoned perfectly.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Order Now <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/0630d732-566a-47ef-8cf5-cf9b227a0d39/Shrimp-Fried-Rice.png" alt="Chicken Fried Rice" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Your Way</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Chicken Fried Rice</h3><p class="card-sub">Rice · Made To Order</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Tender chicken and seasoned rice wok-tossed to order with fresh vegetables and house sauce.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Order Now <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/0630d732-566a-47ef-8cf5-cf9b227a0d39/Shrimp-Fried-Rice.png" alt="House Fried Rice" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Chef's Mix</span></div>
+              <div class="travel-card-mid">
+                <div><h3>House Fried Rice</h3><p class="card-sub">Rice · Everything In It</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">The chef's mix — shrimp, chicken, beef and vegetables all in one bowl. The ultimate American Deli rice dish.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Order Now <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- SALADS -->
+      <!-- ─── COMBOS ─── -->
       <div class="full-cat-block reveal">
-        <div class="full-cat-title">Salads</div>
-        <div class="full-menu-grid">
-          <div class="full-item"><span class="full-item-icon">🥗</span><div class="full-item-info"><h4>Garden Salad</h4><p>Fresh greens, house dressing</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🥗</span><div class="full-item-info"><h4>Chef Salad</h4><p>Ham, turkey, cheese, fresh vegetables</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🍗</span><div class="full-item-info"><h4>Grilled Chicken Salad</h4><p>Marinated grilled chicken over crisp greens</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🍗</span><div class="full-item-info"><h4>Fried Chicken Salad</h4><p>Crispy tenders over fresh greens</p></div></div>
+        <div class="full-cat-title">Combos</div>
+        <div class="travel-grid">
+
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/48c1e47f-1320-4643-a724-2d2362dc67d5/5-wings-fries-combos.jpg" alt="5 Wings + Fries" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Best Value</span></div>
+              <div class="travel-card-mid">
+                <div><h3>5 Wings + Fries</h3><p class="card-sub">Combo · Any Flavor</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Five wings in any sauce you choose, paired with our golden crispy fries. A crowd-pleaser every time.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Order Now <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
+          <div class="travel-card wide">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/e87beb6a-213b-49f1-b3ba-c234fb0a2076/Philly-and-Wings-and-Coke.png" alt="Philly + Wings Combo" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">The Ultimate</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Philly + Wings</h3><p class="card-sub">Combo · Fresh Made</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Can't decide? You don't have to. A fresh Philly sandwich paired with wings in your favorite sauce — the way American Deli was meant to be enjoyed.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Order Now <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/b7a535b8-fca0-479a-8c33-6053318fe3f1/fries-combos.jpg" alt="Fries Combo" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Crowd Size</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Fries Combo</h3><p class="card-sub">Sides · Any Size</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Golden fries in any size — please any size crowd. Made fresh, seasoned just right.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Order Now <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- SEAFOOD -->
+      <!-- ─── SEAFOOD ─── -->
       <div class="full-cat-block reveal">
         <div class="full-cat-title">Seafood</div>
-        <div class="full-menu-grid">
-          <div class="full-item"><span class="full-item-icon">🐟</span><div class="full-item-info"><h4>Tilapia</h4><p>Seasoned and pan-fried fresh daily</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🐟</span><div class="full-item-info"><h4>Whiting</h4><p>Southern-style fried whiting</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🍤</span><div class="full-item-info"><h4>Shrimp</h4><p>Fried or grilled to order</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🍗</span><div class="full-item-info"><h4>Chicken Tenders</h4><p>Hand-battered, golden crispy</p></div></div>
+        <div class="travel-grid">
+
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/0630d732-566a-47ef-8cf5-cf9b227a0d39/Shrimp-Fried-Rice.png" alt="Shrimp" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Fresh Daily</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Shrimp</h3><p class="card-sub">Seafood · Fried or Grilled</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Fresh shrimp, fried or grilled to order. Seasoned with our house blend — light, crispy, and packed with flavor.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Order Now <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/fda7f57f-2d2b-4f6a-8cf2-ff413289a75f/Hero-food.jpg" alt="Tilapia" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Pan Fried</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Tilapia</h3><p class="card-sub">Seafood · Seasoned Fresh</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Seasoned and pan-fried fresh daily. A lighter option packed with flavor and cooked to order.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Order Now <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/fda7f57f-2d2b-4f6a-8cf2-ff413289a75f/Hero-food.jpg" alt="Whiting" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Southern Style</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Whiting</h3><p class="card-sub">Seafood · Fried</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Southern-style fried whiting — golden, crispy, and seasoned the American Deli way.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Order Now <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- SIDES & DRINKS -->
+      <!-- ─── SIDES & DRINKS ─── -->
       <div class="full-cat-block reveal">
         <div class="full-cat-title">Sides &amp; Drinks</div>
-        <div class="full-menu-grid">
-          <div class="full-item"><span class="full-item-icon">🍟</span><div class="full-item-info"><h4>Fries</h4><p>Golden, crispy, seasoned</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🧅</span><div class="full-item-info"><h4>Onion Rings</h4><p>Thick-cut, beer-battered</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🥤</span><div class="full-item-info"><h4>Coke / Diet Coke</h4><p>Ice cold fountain</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🥤</span><div class="full-item-info"><h4>Sprite / Fanta</h4><p>Ice cold fountain drinks</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🧃</span><div class="full-item-info"><h4>Gold Peak Tea</h4><p>Sweet, unsweet, or peach</p></div></div>
-          <div class="full-item"><span class="full-item-icon">🥤</span><div class="full-item-info"><h4>Root Beer</h4><p>Classic fountain root beer</p></div></div>
+        <div class="travel-grid">
+
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/fc56ddde-799d-47c7-a5ea-55ded0b504f5/Fries-AD+%281%29.png" alt="Fries" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Golden Crispy</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Fries</h3><p class="card-sub">Sides · Fresh Cut</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Golden, crispy and seasoned fresh every time. The perfect side for wings, Phillys, or anything on the menu.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Add to Order <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/7ac467cd-0e7a-4a11-a93e-928d1d2e0fc7/cokee.png" alt="Drinks" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Ice Cold</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Fresh Drinks</h3><p class="card-sub">Beverages · Fountain</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Coke, Diet Coke, Sprite, Fanta, Root Beer, Hi-C and Gold Peak Iced Tea — always ice cold, always fresh.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Add to Order <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
+          <div class="travel-card">
+            <img class="travel-card-bg" src="https://images.squarespace-cdn.com/content/v1/64d523ed9c2ac100f7d13950/fc56ddde-799d-47c7-a5ea-55ded0b504f5/Fries-AD+%281%29.png" alt="Onion Rings" loading="lazy" />
+            <div class="travel-card-overlay"></div>
+            <div class="travel-card-inner">
+              <div class="travel-card-top"><span class="travel-card-badge">Beer Battered</span></div>
+              <div class="travel-card-mid">
+                <div><h3>Onion Rings</h3><p class="card-sub">Sides · Thick Cut</p></div>
+                <div>
+                  <p class="card-overview-label">Overview</p>
+                  <p class="card-overview-text">Thick-cut, beer-battered onion rings. Crispy on the outside, tender on the inside — a perfect side.</p>
+                </div>
+              </div>
+              <div class="travel-card-bottom"><div class="travel-card-cta"><button class="order-btn">Add to Order <span class="arrow">→</span></button></div></div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-    </div>
-  </div>
+    </div><!-- /container -->
+  </div><!-- /full-menu-body -->
 
-  <!-- Order CTA -->
+  <!-- ══ ORDER CTA ══ -->
   <section class="store-banner">
     <div class="container">
       <div class="store-banner-inner">
@@ -181,7 +557,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ══ FOOTER ══ -->
   <footer>
     <div class="container">
       <div class="footer-main">
